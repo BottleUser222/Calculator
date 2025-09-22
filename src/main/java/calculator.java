@@ -15,6 +15,11 @@ public class calculator {
             }
             int num2 = input.nextInt();
             int sum = num1 + num2;
-            System.out.println("The sum is " + sum);
+            if (num1==2147483647 || num2==2147483647){
+                System.out.println("One of the numbers you entered is too large!");
+            }
+            else {
+                System.out.println("The sum is " + sum);
+            }
         }
     }
