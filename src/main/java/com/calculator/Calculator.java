@@ -1,13 +1,13 @@
 package com.calculator;
 
 public class Calculator {
-    int x;
-    int y;
-    Calculator(int x,int y){
-        this.x=x;
-        this.y=y;
+    private long frst;
+    private long scnd;
+    public Calculator(long x,long y){
+        this.frst=x;
+        this.scnd=y;
     }
-    void add(){
-        System.out.println("The sum is " + (this.x+this.y));
+    public void add(){
+        System.out.println("The sum is " + (this.frst+this.scnd));
     }
 }
