@@ -18,14 +18,7 @@ public class Main {
             }
             int num2 = input.nextInt();
             Calculator calc = new Calculator(num1,num2);
-            for (int i=0;i<=num1;i++){
-                if (num2==2147483647 || num1==2147483647 || (num2+i==2147483647 && i<num1)){
-                    System.out.println("Your number is too large!");
-                    break;
-                }
-                else if(i==num1 && i+num2!=2147483647){
-                    calc.add();
-                }
-            }
+            if ((num1>0 && num2>0 && num1+num2<0) || (num1<0 && num2<0 && num1+num2>0)) System.out.println("The sum of the given numbers reached an overflow!");
+            else calc.add();
         }
     }
