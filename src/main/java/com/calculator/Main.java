@@ -10,15 +10,22 @@ public class Main {
                 System.out.println("That's not a number! Input a number: ");
                 input.next();
             }
-            long num1 = input.nextInt();
+            int num1 = input.nextInt();
             System.out.print("Please enter another number: ");
             while (!input.hasNextInt()){
                 System.out.println("That's not a number! Input a number: ");
                 input.next();
             }
-            long num2 = input.nextInt();
+            int num2 = input.nextInt();
             Calculator calc = new Calculator(num1,num2);
-            if (num1+num2>=2147483647) System.out.println("Your number is too large!");
-            else calc.add();
+            for (int i=0;i<=num1;i++){
+                if (num2==2147483647 || num1==2147483647 || (num2+i==2147483647 && i<num1)){
+                    System.out.println("Your number is too large!");
+                    break;
+                }
+                else if(i==num1 && i+num2!=2147483647){
+                    calc.add();
+                }
+            }
         }
     }
