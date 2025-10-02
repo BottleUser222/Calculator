@@ -32,14 +32,17 @@ public class Calculator {
         }
         else System.out.println("The quotient is " + (firstNumber/secondNumber));
     }
+
+
+
     private boolean checkAdditionOverflow (int a, int b){
-        if ((a > 0 && b > 0 && a + b < 0) || (a < 0 && b < 0 && a + b > 0)) {
+        if ((a>0 && b>0 && a+b<0) || (a<0 && b<0 && a+b>0)) {
             return true;
         }
         else return false;
     }
     private boolean checkSubtractionOverflow (int a, int b){
-        if ((a > 0 && b < 0 && a - b < 0) || (a<0 && b>0 && a-b>0)){
+        if ((a>0 && b<0 && a-b<0) || (a<0 && b>0 && a-b>0)){
             return true;
         }
         else return false;
