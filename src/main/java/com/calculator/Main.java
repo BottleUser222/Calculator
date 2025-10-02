@@ -24,11 +24,11 @@ public class Main {
                 System.out.print("That's not a number! Input a number: ");
             }
             int num2 = input.nextInt();
-            Calculator calc = new Calculator(num1,num2);
 
-            if (operation=='+') calc.add();
-            if (operation=='-') calc.subtract();
-            if (operation=='*') calc.multiply();
-            else calc.divide();
+            Calculator calc = new Calculator(num1,num2);
+            if (operation=='+') { calc.add(); }
+            if (operation=='-') { calc.subtract(); }
+            if (operation=='*') { calc.multiply(); }
+            if (operation=='/') { calc.divide(); }
         }
     }
