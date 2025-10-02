@@ -8,10 +8,20 @@ public class Main {
             char operation = resolveOperation(input);
             Calculator calc = new Calculator(resolveFirstNumber(input),resolveSecondNumber(input));
 
-            if (operation=='+') { calc.add(); }
-            if (operation=='-') { calc.subtract(); }
-            if (operation=='*') { calc.multiply(); }
-            if (operation=='/') { calc.divide(); }
+            switch (operation){
+                case '+':
+                    calc.add();
+                    break;
+                case '-':
+                    calc.subtract();
+                    break;
+                case '*':
+                    calc.multiply();
+                    break;
+                case '/':
+                    calc.divide();
+                    break;
+            }
         }
 
 
