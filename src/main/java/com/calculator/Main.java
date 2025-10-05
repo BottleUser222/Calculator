@@ -10,7 +10,7 @@ public class Main {
 
             switch (operation){
                 case '+':
-                    calc.add();
+                   calc.add();
                     break;
                 case '-':
                     calc.subtract();
