@@ -8,37 +8,41 @@ public class Calculator {
         this.firstNumber=firstNumber;
         this.secondNumber=secondNumber;
     }
-    public int add(){
-        if (checkAdditionOverflow(firstNumber, secondNumber)) {
-            System.out.println("The sum of the given numbers reached an overflow!");
-            return -1;
+    public String add(){
+        try{
+            int sum=Math.addExact(firstNumber,secondNumber);
+            return "The sum is "+sum;
         }
-        else System.out.println("The sum is " + (firstNumber+secondNumber));
-        return  firstNumber+secondNumber;
+        catch(Exception e){
+            return "The sum of the given numbers reached an overflow!";
+        }
     }
-    public int subtract(){
-        if (checkSubtractionOverflow(firstNumber, secondNumber)) {
-            System.out.println("The difference of the given numbers reached an overflow!");
-            return -1;
+    public String subtract(){
+        try{
+            int diff = Math.subtractExact(firstNumber,secondNumber);
+            return "The difference is "+diff;
         }
-        else System.out.println("The difference is " + (firstNumber-secondNumber));
-        return  firstNumber-secondNumber;
+        catch(Exception e){
+            return "The difference of the given numbers reached an overflow!";
+        }
     }
-    public int multiply(){
-        if (checkMultiplicationOverflow(firstNumber, secondNumber)) {
-            System.out.println("The product of the given numbers reached an overflow!");
-            return -1;
+    public String multiply(){
+        try{
+            int prod=Math.multiplyExact(firstNumber,secondNumber);
+            return "The product is " +prod;
         }
-        else System.out.println("The product is " + (firstNumber*secondNumber));
-        return  firstNumber*secondNumber;
+        catch(Exception e){
+            return "The product of the given numbers reached an overflow!";
+        }
     }
-    public int divide(){
-        if (secondNumber==0) {
-            System.out.println("You cannot divide by zero!");
-            return -1;
+    public String divide(){
+        try{
+            int quot=Math.divideExact(firstNumber,secondNumber);
+            return "The quotient is "+quot;
         }
-        else System.out.println("The quotient is " + (firstNumber/secondNumber));
-        return firstNumber/secondNumber;
+        catch(Exception e){
+            return "The quotient of the given numbers reached an overflow!";
+        }
     }
 
 
