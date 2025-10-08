@@ -8,41 +8,29 @@ public class Calculator {
         this.firstNumber=firstNumber;
         this.secondNumber=secondNumber;
     }
-    public String add(){
-        try{
-            int sum=Math.addExact(firstNumber,secondNumber);
-            return "The sum is "+sum;
+    public int add(){
+        if (checkAdditionOverflow(firstNumber, secondNumber)) {
+            throw new ArithmeticException("The sum of the given numbers reached an overflow!");
         }
-        catch(Exception e){
-            return "The sum of the given numbers reached an overflow!";
-        }
+        else return firstNumber+secondNumber;
     }
-    public String subtract(){
-        try{
-            int diff = Math.subtractExact(firstNumber,secondNumber);
-            return "The difference is "+diff;
+    public int subtract(){
+        if (checkSubtractionOverflow(firstNumber, secondNumber)) {
+            throw new ArithmeticException("The subtraction of the given numbers reached an overflow!");
         }
-        catch(Exception e){
-            return "The difference of the given numbers reached an overflow!";
-        }
+        else return  firstNumber-secondNumber;
     }
-    public String multiply(){
-        try{
-            int prod=Math.multiplyExact(firstNumber,secondNumber);
-            return "The product is " +prod;
+    public int multiply(){
+        if (checkMultiplicationOverflow(firstNumber, secondNumber)) {
+            throw new ArithmeticException("The product of the given numbers reached an overflow!");
         }
-        catch(Exception e){
-            return "The product of the given numbers reached an overflow!";
-        }
+        else return  firstNumber*secondNumber;
     }
-    public String divide(){
-        try{
-            int quot=Math.divideExact(firstNumber,secondNumber);
-            return "The quotient is "+quot;
+    public int divide(){
+        if(secondNumber==0){
+            throw new ArithmeticException("You cannot divide by zero!");
         }
-        catch(Exception e){
-            return "The quotient of the given numbers reached an overflow!";
-        }
+        else return  firstNumber/secondNumber;
     }
 
 

@@ -16,7 +16,7 @@ class MainTest {
         Scanner scSecondNumber = new Scanner("25");
         int secondResult = copyResolveSecondNumber(scSecondNumber);
         Calculator calc = new Calculator(firstResult, secondResult);
-        assertEquals("The product is 125", calc.multiply());
+        assertEquals(125, calc.multiply());
     }
     @Test
     void testOperation() {
