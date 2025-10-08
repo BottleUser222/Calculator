@@ -8,6 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
+    void testMainClass(){
+        Scanner scOperation = new Scanner("*");
+        char operation = copyResolveOperation(scOperation);
+        Scanner scFirstNumber = new Scanner("5");
+        int firstResult = copyResolveFirstNumber(scFirstNumber);
+        Scanner scSecondNumber = new Scanner("25");
+        int secondResult = copyResolveSecondNumber(scSecondNumber);
+        Calculator calc = new Calculator(firstResult, secondResult);
+        assertEquals("The product is 125", calc.multiply());
+    }
+    @Test
     void testOperation() {
         Scanner sc = new Scanner("+");
         char operation = copyResolveOperation(sc);
