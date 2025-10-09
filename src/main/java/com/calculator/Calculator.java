@@ -12,25 +12,25 @@ public class Calculator {
         if (checkAdditionOverflow(firstNumber, secondNumber)) {
             throw new ArithmeticException("The sum of the given numbers reached an overflow!");
         }
-        else return firstNumber+secondNumber;
+        return firstNumber+secondNumber;
     }
     public int subtract(){
         if (checkSubtractionOverflow(firstNumber, secondNumber)) {
             throw new ArithmeticException("The subtraction of the given numbers reached an overflow!");
         }
-        else return  firstNumber-secondNumber;
+        return  firstNumber-secondNumber;
     }
     public int multiply(){
         if (checkMultiplicationOverflow(firstNumber, secondNumber)) {
             throw new ArithmeticException("The product of the given numbers reached an overflow!");
         }
-        else return  firstNumber*secondNumber;
+        return  firstNumber*secondNumber;
     }
     public int divide(){
         if(secondNumber==0){
             throw new ArithmeticException("You cannot divide by zero!");
         }
-        else return  firstNumber/secondNumber;
+        return  firstNumber/secondNumber;
     }
 
 
